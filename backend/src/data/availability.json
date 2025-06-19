@@ -1,0 +1,126 @@
+[
+  {
+    "userId": "1",
+    "week": "2025-06-16",
+    "preferences": {
+      "unavailable": [],
+      "preferred": [],
+      "neutral": [
+        {
+          "day": 0,
+          "timeSlot": 0
+        },
+        {
+          "day": 0,
+          "timeSlot": 1
+        },
+        {
+          "day": 0,
+          "timeSlot": 2
+        },
+        {
+          "day": 0,
+          "timeSlot": 3
+        },
+        {
+          "day": 1,
+          "timeSlot": 0
+        },
+        {
+          "day": 1,
+          "timeSlot": 1
+        },
+        {
+          "day": 1,
+          "timeSlot": 2
+        },
+        {
+          "day": 1,
+          "timeSlot": 3
+        },
+        {
+          "day": 2,
+          "timeSlot": 0
+        },
+        {
+          "day": 2,
+          "timeSlot": 1
+        },
+        {
+          "day": 2,
+          "timeSlot": 2
+        },
+        {
+          "day": 2,
+          "timeSlot": 3
+        },
+        {
+          "day": 3,
+          "timeSlot": 0
+        },
+        {
+          "day": 3,
+          "timeSlot": 1
+        },
+        {
+          "day": 3,
+          "timeSlot": 2
+        },
+        {
+          "day": 3,
+          "timeSlot": 3
+        },
+        {
+          "day": 4,
+          "timeSlot": 0
+        },
+        {
+          "day": 4,
+          "timeSlot": 1
+        },
+        {
+          "day": 4,
+          "timeSlot": 2
+        },
+        {
+          "day": 4,
+          "timeSlot": 3
+        },
+        {
+          "day": 5,
+          "timeSlot": 0
+        },
+        {
+          "day": 5,
+          "timeSlot": 1
+        },
+        {
+          "day": 5,
+          "timeSlot": 2
+        },
+        {
+          "day": 5,
+          "timeSlot": 3
+        },
+        {
+          "day": 6,
+          "timeSlot": 0
+        },
+        {
+          "day": 6,
+          "timeSlot": 1
+        },
+        {
+          "day": 6,
+          "timeSlot": 2
+        },
+        {
+          "day": 6,
+          "timeSlot": 3
+        }
+      ]
+    },
+    "submittedAt": "2025-06-19T08:25:10.943Z",
+    "userName": "דוד כהן"
+  }
+]

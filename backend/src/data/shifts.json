@@ -1,0 +1,506 @@
+[
+  {
+    "id": "sg_0_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.098Z"
+  },
+  {
+    "id": "patrol_0_0",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_0_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_0_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_0_1",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_0_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_0_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_0_2",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_0_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_0_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_0_3",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_0_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_1_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_1_0",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_1_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_1_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_1_1",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_1_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_1_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_1_2",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_1_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_1_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_1_3",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_1_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_2_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_2_0",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_2_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_2_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_2_1",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_2_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_2_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_2_2",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_2_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_2_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_2_3",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_2_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_3_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_3_0",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_3_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_3_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_3_1",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_3_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_3_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_3_2",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_3_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_3_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_3_3",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_3_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_4_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_4_0",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_4_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_4_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_4_1",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_4_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_4_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_4_2",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_4_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_4_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_4_3",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_4_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_5_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_5_0",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_5_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_5_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_5_1",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_5_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_5_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_5_2",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_5_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_5_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_5_3",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_5_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_6_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_6_0",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_6_0",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_6_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_6_1",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_6_1",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_6_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_6_2",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_6_2",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "sg_6_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol_6_3",
+    "week": "2025-06-16",
+    "soldierName": "דוד כהן",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  },
+  {
+    "id": "patrol4h_6_3",
+    "week": "2025-06-16",
+    "soldierName": "משה לוי",
+    "updatedAt": "2025-06-19T08:49:51.099Z"
+  }
+]
