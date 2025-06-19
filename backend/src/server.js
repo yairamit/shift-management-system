@@ -27,4 +27,8 @@ app.get('/api/health', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  
+  // חיבור ל-MongoDB אחרי שהשרת עלה
+  const { connectDB } = require('./services/dataService');
+  connectDB();
 });
