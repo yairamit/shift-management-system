@@ -1,11 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 
-const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/users');
-const shiftRoutes = require('./routes/shifts');
-const availabilityRoutes = require('./routes/availability');
-const { connectDB } = require('./services/dataService');
+const authRoutes = require('../routes/auth');
+const userRoutes = require('../routes/users');
+const shiftRoutes = require('../routes/shifts');
+const availabilityRoutes = require('../routes/availability');
+const { connectDB } = require('../services/dataService');
 
 const app = express();
 
