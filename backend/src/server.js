@@ -5,6 +5,7 @@ const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const shiftRoutes = require('./routes/shifts');
 const availabilityRoutes = require('./routes/availability');
+const { connectDB } = require('./services/dataService');
 
 const app = express();
 
@@ -23,9 +24,10 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running on Vercel' });
 });
 
-// חיבור MongoDB רק אחרי שהכל מוכן
-const { connectDB } = require('./services/dataService');
-connectDB().catch(console.error);
+// Connect to MongoDB (on cold start of serverless function)
+connectDB().catch((err) => {
+  console.error('🛑 שגיאה בהתחברות ל‑MongoDB:', err);
+});
 
 // Export for Vercel
 module.exports = app;
