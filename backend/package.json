@@ -4,8 +4,8 @@
   "description": "Shift Management System Backend",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
+    "start": "node api/server.js",
+    "dev": "nodemon api/server.js",
      "vercel-build": "echo \"no build step\""
   },
    "dependencies": {
