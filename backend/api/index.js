@@ -1,48 +1,68 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 console.log('🚀 Starting API server...');
+console.log('📁 Current directory:', process.cwd());
+console.log('📁 __dirname:', __dirname);
 
-// Import routes directly with relative paths from api folder
+// בVercel הנתיב צריך להיות יחסי לתיקיית הbackend
+// מהתיקיה api/ אנחנו צריכים ללכת ל../src/
+const backendRoot = path.resolve(__dirname, '..');
+const controllersPath = path.join(backendRoot, 'src', 'controllers');
+const servicesPath = path.join(backendRoot, 'src', 'services');
+
+console.log('📁 Backend root:', backendRoot);
+console.log('📁 Controllers path:', controllersPath);
+console.log('📁 Services path:', servicesPath);
+
+// בדיקה שהתיקיות קיימות
+const fs = require('fs');
+console.log('📁 Controllers exists:', fs.existsSync(controllersPath));
+console.log('📁 Services exists:', fs.existsSync(servicesPath));
+
+// Import routes with correct paths
 let authController, userController, shiftController, availabilityController, connectDB;
 
 try {
-  authController = require('../src/controllers/authController');
+  authController = require(path.join(controllersPath, 'authController.js'));
   console.log('✅ authController loaded');
 } catch (error) {
   console.error('❌ Error loading authController:', error.message);
+  console.error('❌ Tried path:', path.join(controllersPath, 'authController.js'));
 }
 
 try {
-  userController = require('../src/controllers/userController');
+  userController = require(path.join(controllersPath, 'userController.js'));
   console.log('✅ userController loaded');
 } catch (error) {
   console.error('❌ Error loading userController:', error.message);
 }
 
 try {
-  shiftController = require('../src/controllers/shiftController');
+  shiftController = require(path.join(controllersPath, 'shiftController.js'));
   console.log('✅ shiftController loaded');
 } catch (error) {
   console.error('❌ Error loading shiftController:', error.message);
 }
 
 try {
-  availabilityController = require('../src/controllers/availabilityController');
+  availabilityController = require(path.join(controllersPath, 'availabilityController.js'));
   console.log('✅ availabilityController loaded');
 } catch (error) {
   console.error('❌ Error loading availabilityController:', error.message);
 }
 
 try {
-  const dataService = require('../src/services/dataService');
+  const dataService = require(path.join(servicesPath, 'dataService.js'));
   connectDB = dataService.connectDB;
   console.log('✅ dataService loaded');
 } catch (error) {
   console.error('❌ Error loading dataService:', error.message);
+  console.error('❌ Tried path:', path.join(servicesPath, 'dataService.js'));
 }
 
-console.log('📦 All modules imported successfully');
+console.log('📦 Module loading complete');
 
 const app = express();
 
@@ -53,7 +73,7 @@ app.use(cors({
     'http://localhost:3001', 
     'https://shift-management-system-amber.vercel.app',
     'https://shift-management-system-server.vercel.app',
-    /\.vercel\.app$/  // כל הדומיינים של vercel
+    /\.vercel\.app$/
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -61,13 +81,11 @@ app.use(cors({
 }));
 
 app.use(express.json());
-
-// Handle preflight requests
 app.options('*', cors());
 
 console.log('🔧 Middleware configured');
 
-// Debug middleware to log all requests
+// Debug middleware
 app.use((req, res, next) => {
   console.log(`📡 ${req.method} ${req.path} - ${new Date().toISOString()}`);
   next();
@@ -76,12 +94,17 @@ app.use((req, res, next) => {
 // Auth routes
 app.post('/api/auth/login', async (req, res) => {
   try {
+    console.log('🔐 Login route called');
+    
     if (!authController) {
-      throw new Error('authController not loaded');
+      console.error('❌ authController not loaded');
+      return res.status(500).json({ error: 'authController not loaded' });
     }
+    
     await authController.login(req, res);
+    
   } catch (error) {
-    console.error('❌ Auth login error:', error);
+    console.error('❌ Auth login route error:', error);
     res.status(500).json({ error: 'שגיאת שרת', details: error.message });
   }
 });
@@ -226,71 +249,51 @@ app.get('/api/health', (req, res) => {
   console.log('🏥 Health check requested');
   res.json({ 
     status: 'OK', 
-    message: 'Server is running on Vercel - Direct Routes',
+    message: 'Server is running on Vercel',
     timestamp: new Date().toISOString(),
-    routes: [
-      'GET /api/health',
-      'GET /api/users',
-      'POST /api/auth/login',
-      'GET /api/shifts/:week',
-      'GET /api/availability/:week'
-    ]
+    controllers: {
+      auth: !!authController,
+      user: !!userController,
+      shift: !!shiftController,
+      availability: !!availabilityController,
+      dataService: !!connectDB
+    },
+    paths: {
+      backendRoot,
+      controllersPath,
+      servicesPath
+    }
   });
 });
 
 // Root route
 app.get('/', (req, res) => {
-  console.log('🏠 Root route requested');
   res.json({ 
     message: 'Shift Management API',
     version: '1.0.0',
-    endpoints: {
-      health: '/api/health',
-      users: '/api/users',
-      auth: '/api/auth/login',
-      shifts: '/api/shifts/:week',
-      availability: '/api/availability/:week'
-    }
+    status: 'ready'
   });
 });
 
-// Catch-all for debugging
+// Catch-all
 app.get('*', (req, res) => {
-  console.log(`❓ Unknown route requested: ${req.path}`);
   res.status(404).json({ 
     message: 'Route not found',
     path: req.path,
-    method: req.method,
-    timestamp: new Date().toISOString(),
-    availableRoutes: [
-      '/api/health',
-      '/api/users',
-      '/api/auth/login',
-      '/api/shifts/:week',
-      '/api/availability/:week'
-    ]
+    method: req.method
   });
 });
 
 console.log('🛣️ All routes configured');
 
 // Initialize DB connection
-let dbConnected = false;
-
-async function initConnectionIfNeeded() {
-  if (!dbConnected) {
-    try {
-      await connectDB();
-      dbConnected = true;
-      console.log('✅ MongoDB connected');
-    } catch (err) {
-      console.error('🛑 MongoDB connection failed:', err);
-    }
-  }
+if (connectDB) {
+  connectDB().then(() => {
+    console.log('✅ MongoDB connected');
+  }).catch(err => {
+    console.error('🛑 MongoDB connection failed:', err);
+  });
 }
-
-// Initialize on startup
-initConnectionIfNeeded();
 
 console.log('🎯 API server ready');
 
