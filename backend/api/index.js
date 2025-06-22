@@ -21,15 +21,61 @@ const fs = require('fs');
 console.log('📁 Controllers exists:', fs.existsSync(controllersPath));
 console.log('📁 Services exists:', fs.existsSync(servicesPath));
 
+// בדיקה מה יש בתיקיות
+try {
+  const controllersFiles = fs.readdirSync(controllersPath);
+  console.log('📁 Controllers files:', controllersFiles);
+} catch (error) {
+  console.log('❌ Cannot read controllers directory:', error.message);
+}
+
+try {
+  const servicesFiles = fs.readdirSync(servicesPath);
+  console.log('📁 Services files:', servicesFiles);
+} catch (error) {
+  console.log('❌ Cannot read services directory:', error.message);
+}
+
+// בדיקה מה יש בתיקייה הראשית
+try {
+  const backendFiles = fs.readdirSync(backendRoot);
+  console.log('📁 Backend root files:', backendFiles);
+} catch (error) {
+  console.log('❌ Cannot read backend root:', error.message);
+}
+
 // Import routes with correct paths
 let authController, userController, shiftController, availabilityController, connectDB;
 
 try {
-  authController = require(path.join(controllersPath, 'authController.js'));
-  console.log('✅ authController loaded');
+  // נסה נתיבים שונים
+  const possiblePaths = [
+    path.join(controllersPath, 'authController.js'),
+    path.join(controllersPath, 'authController'),
+    path.join(backendRoot, 'src', 'controllers', 'authController.js'),
+    '../src/controllers/authController.js',
+    '../src/controllers/authController'
+  ];
+  
+  for (const testPath of possiblePaths) {
+    try {
+      console.log(`🔍 Trying authController path: ${testPath}`);
+      console.log(`🔍 File exists: ${fs.existsSync(testPath)}`);
+      
+      authController = require(testPath);
+      console.log('✅ authController loaded from:', testPath);
+      break;
+    } catch (error) {
+      console.log(`❌ Failed to load from ${testPath}:`, error.message);
+    }
+  }
+  
+  if (!authController) {
+    console.error('❌ Could not load authController from any path');
+  }
+  
 } catch (error) {
   console.error('❌ Error loading authController:', error.message);
-  console.error('❌ Tried path:', path.join(controllersPath, 'authController.js'));
 }
 
 try {
