@@ -18,14 +18,29 @@ app.use('/api/users', userRoutes);
 app.use('/api/shifts', shiftRoutes);
 app.use('/api/availability', availabilityRoutes);
 
+// Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running on Vercel' });
 });
 
-connectDB().catch((err) => {
-  console.error('🛑 שגיאה בהתחברות ל‑MongoDB:', err);
-});
+// עבור Vercel (serverless) - לא מריץ app.listen
+// רק מנסה להתחבר לבסיס הנתונים פעם אחת
+let dbConnected = false;
 
+async function initConnectionIfNeeded() {
+  if (!dbConnected) {
+    try {
+      await connectDB();
+      dbConnected = true;
+      console.log('✅ MongoDB connected');
+    } catch (err) {
+      console.error('🛑 MongoDB connection failed:', err);
+    }
+  }
+}
+initConnectionIfNeeded();
+
+// אם מריצים מקומית (npm run dev או node src/server.js)
 if (require.main === module) {
   const PORT = process.env.PORT || 3001;
   connectDB()
