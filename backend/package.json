@@ -2,13 +2,14 @@
   "name": "shift-management-backend",
   "version": "1.0.0",
   "description": "Shift Management System Backend",
-  "main": "api/index.js",
+  "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-     "vercel-build": "echo \"no build step\""
+    "vercel": "node api/index.js",
+    "vercel-build": "echo \"no build step\""
   },
-   "dependencies": {
+  "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

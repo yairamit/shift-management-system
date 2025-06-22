@@ -20,7 +20,7 @@ app.use('/api/availability', availabilityRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Server is running on Vercel' });
+  res.json({ status: 'OK', message: 'Server is running' });
 });
 
 // עבור Vercel (serverless) - לא מריץ app.listen
@@ -38,9 +38,8 @@ async function initConnectionIfNeeded() {
     }
   }
 }
-initConnectionIfNeeded();
 
-// אם מריצים מקומית (npm run dev או node src/server.js)
+// רק אם מריצים את הקובץ הזה ישירות (לא דרך require)
 if (require.main === module) {
   const PORT = process.env.PORT || 3001;
   connectDB()
@@ -53,6 +52,9 @@ if (require.main === module) {
       console.error('🛑 שגיאה בהתחברות ל‑MongoDB:', err);
       process.exit(1);
     });
+} else {
+  // אם הקובץ נטען דרך require, פשוט התחבר לDB
+  initConnectionIfNeeded();
 }
 
 module.exports = app;
