@@ -13,8 +13,8 @@ export default defineConfig({
       '/api': {
         target: process.env.NODE_ENV === 'production'
           ? 'https://your-app.vercel.app'
-          : 'http://127.0.0.1:3001',
-        changeOrigin: true,
+          : 'http://localhost:3001',
+        changeOrigin: true, 
         secure: false,
         // ws: true,  // אם אתה משתמש ב‑WebSockets
       }
