@@ -2,7 +2,7 @@
   "name": "shift-management-backend",
   "version": "1.0.0",
   "description": "Shift Management System Backend",
-  "main": "src/server.js",
+  "main": "api/index.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
