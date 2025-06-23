@@ -11,6 +11,14 @@ const availabilityRoutes = require('./routes/availability');
 
 const app = express();
 
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://shift-management-system-amber.vercel.app/', 
+    'shift-management-system-production.up.railway.app'
+  ]
+}));
+
 // Middleware
 app.use(cors());
 app.use(express.json());
