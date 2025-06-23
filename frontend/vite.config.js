@@ -12,7 +12,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: process.env.NODE_ENV === 'production'
-          ? 'https://your-app.vercel.app'
+          ? 'shift-management-system-production.up.railway.app/api'
           : 'http://localhost:3001',
         changeOrigin: true, 
         secure: false,
