@@ -1,25 +1,42 @@
-// server.js (או index.js)
-require('dotenv').config();        // נטען רק אם אתה משתמש בקובץ .env
 const express = require('express');
 const cors = require('cors');
-const { connectDB } = require('./services/dataService');
-
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const shiftRoutes = require('./routes/shifts');
 const availabilityRoutes = require('./routes/availability');
+const { connectDB } = require('./services/dataService');
 
 const app = express();
 
-app.use(cors({
+// CORS configuration מורחב
+const corsOptions = {
   origin: [
-    'https://shift-management-system-amber.vercel.app/', 
-    'shift-management-system-production.up.railway.app'
-  ]
-}));
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://shift-management-system-amber.vercel.app',
+    /\.vercel\.app$/,
+    /\.railway\.app$/
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: [
+    'Content-Type', 
+    'Authorization', 
+    'Accept', 
+    'Origin', 
+    'X-Requested-With',
+    'Access-Control-Request-Method',
+    'Access-Control-Request-Headers'
+  ],
+  optionsSuccessStatus: 200 // עבור Legacy browsers
+};
 
-// Middleware
-app.use(cors());
+// הפעלת CORS
+app.use(cors(corsOptions));
+
+// טיפול מפורש ב-preflight requests
+app.options('*', cors(corsOptions));
+
 app.use(express.json());
 
 // Routes
@@ -30,20 +47,51 @@ app.use('/api/availability', availabilityRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Server is running' });
+  res.json({ 
+    status: 'OK', 
+    message: 'Server is running on Railway',
+    timestamp: new Date().toISOString(),
+    cors: 'enabled'
+  });
 });
 
-// קביעת הפורט
-const PORT = process.env.PORT || 3001;
+// Debug middleware להראות בקשות
+app.use((req, res, next) => {
+  console.log(`📡 ${req.method} ${req.path} - Origin: ${req.get('Origin')}`);
+  next();
+});
 
-// חיבור ל‑MongoDB ואז התחלת ה‑server
-connectDB()
-  .then(() => {
-    app.listen(PORT, '0.0.0.0', () => {
-      console.log(`🟢 Express מאזין על: http://127.0.0.1:${PORT}`);
+// Initialize DB connection
+let dbConnected = false;
+
+async function initConnectionIfNeeded() {
+  if (!dbConnected) {
+    try {
+      await connectDB();
+      dbConnected = true;
+      console.log('✅ MongoDB connected');
+    } catch (err) {
+      console.error('🛑 MongoDB connection failed:', err);
+    }
+  }
+}
+
+// רק אם מריצים את הקובץ הזה ישירות
+if (require.main === module) {
+  const PORT = process.env.PORT || 3001;
+  connectDB()
+    .then(() => {
+      app.listen(PORT, '0.0.0.0', () => {
+        console.log(`🟢 Express מאזין על: http://0.0.0.0:${PORT}`);
+        console.log('🌐 CORS enabled for:', corsOptions.origin);
+      });
+    })
+    .catch((err) => {
+      console.error('🛑 שגיאה בהתחברות ל‑MongoDB:', err);
+      process.exit(1);
     });
-  })
-  .catch((err) => {
-    console.error('🛑 שגיאה בהתחברות ל‑MongoDB:', err);
-    process.exit(1);
-  });
+} else {
+  initConnectionIfNeeded();
+}
+
+module.exports = app;
